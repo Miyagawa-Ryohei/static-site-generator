@@ -1,0 +1,22 @@
+[
+  {
+    "pageName":"introduce" ,
+    "panels": [
+      {
+        "image": "slide-1.png",
+        "name": "add",
+        "describe": "pain"
+      },
+      {
+        "image": "fuyu-koi.jpg",
+        "name": "りんご",
+        "describe": "おいしいりんごだよ！！"
+      },
+      {
+        "image": "kohaku-ichigo.jpg",
+        "name": "おいしいいちご",
+        "describe": "紅白いちご"
+      }
+    ]
+  }
+]

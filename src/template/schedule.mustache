@@ -1,0 +1,36 @@
+<main class="contents">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2">
+                <div class="card" style="height: 100%; background-color: aqua">
+                </div>
+            </div>
+            <div class="col-xl-10">
+                <div class="row">
+                    {{#panels}}
+                        <div class="col-md-4 col-xl-3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="image/products/{{image}}" width="100%" />
+                                <div class="card-body">
+                                    <h5 class="card-title">{{name}}</h5>
+                                    <p class="card-text">{{describe}}</p>
+                                    {{detail}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/panels}}
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

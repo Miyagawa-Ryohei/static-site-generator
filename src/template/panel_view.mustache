@@ -1,0 +1,118 @@
+<style>
+    #FilterBox div.tag {
+        display : inline-flex;
+        cursor: pointer;
+    }
+    .tags div.tag {
+        display: inline-flex;
+    }
+    .card {
+        display : block;
+    }
+
+</style>
+<main class="contents">
+    <div class="container-fluid">
+        <h1>{{pageTitle}}</h1>
+        <div class="row">
+            <div class="col-xl-2">
+                <div class="card" id="FilterBox" style="height: 100%; background-color: ghostwhite">
+                    <h6>絞り込み</h6>
+                </div>
+            </div>
+            <div class="col-xl-10">
+                <div class="row">
+                    {{#panels}}
+                        <div class="col-md-4 col-xl-3 card-block">
+                            <div class="card" style="width: 18rem;">
+                                <img src="image/products/{{image}}" width="100%" />
+                                <div class="card-body tags">
+                                    {{#tags}}
+                                        <div class="badge-pill bg-primary tag">{{.}}</div>
+                                    {{/tags}}
+                                    <h5 class="card-title">{{name}}</h5>
+                                    <p class="card-text">{{abstract}}</p>
+                                    {{#detailHtml}}
+                                    <a href="{{.}}.html">...詳細</a>
+                                    {{/detailHtml}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/panels}}
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    var tagsSet=[]
+    $(".tag").each(function(){
+        tagsSet.push($(this).text())
+    })
+    var filter = [];
+    var set = new Set();
+    tagsSet.map(t => {set.add(t)})
+    var counter = 0
+    const tagsFromSet = Array.from(set)
+    const tList = tagsFromSet.sort(function(a,b){
+        return a > b ? 1 : -1;
+    })
+    tList.forEach(function(t){
+        var filterBox = $("#FilterBox");
+        var tagFilter = $(
+            "<div class='badge-pill bg-secondary tag' style='margin-right: 10px;'>" + t +"</div>"
+        )
+        tagFilter.on('click', function(e){
+            if(!e.target.getAttribute("checked")) {
+                e.target.setAttribute("checked",true)
+                $(this).removeClass("bg-secondary")
+                $(this).addClass("bg-primary")
+                if(!(t in filter)){
+                    filter.push(t);
+                }
+            } else {
+                e.target.removeAttribute("checked")
+                $(this).removeClass("bg-primary")
+                $(this).addClass("bg-secondary")
+                var index = filter.indexOf(t)
+                if(index !== -1){
+                    filter.splice(index,1)
+                }
+            }
+            var cards = $(".card-block")
+            cards.each(function(c){
+                var attached = []
+                $(this).find(".tag").each(function(){
+                    attached.push($(this).text())
+                })
+                var show
+                if(!filter.length){
+                    show = true
+                }else {
+                    attached.map(t => {
+                        if(filter.indexOf(t) !== -1) {
+                            show=true
+                        }
+                    })
+                }
+                if(!show) {
+                    $(this).hide()
+                }else {
+                    $(this).show();
+                }
+            })
+        })
+        filterBox.append(tagFilter)
+        counter ++;
+    });
+</script>

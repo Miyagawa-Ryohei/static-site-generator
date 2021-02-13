@@ -1,0 +1,15 @@
+[
+  {
+    "map" : "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.3343221612868!2d138.39290601523953!3d34.973289680365305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a49fc15f42fdb%3A0x51d7f4459bcddf22!2z44CSNDIyLTgwNzYg6Z2Z5bKh55yM6Z2Z5bKh5biC6ae_5rKz5Yy65YWr5bmh77yR5LiB55uu77yV4oiS77yT77ySIDFG!5e0!3m2!1sja!2sjp!4v1610888615737!5m2!1sja!2sjp' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>'",
+    "information" : [{
+      "key": "名称" ,
+      "value" : "Fruit Bomb Factory"
+    }, {
+      "key": "所在地",
+      "value": "〒422-8076 静岡県静岡市駿河区八幡１丁目５−３２ 1F"
+    }, {
+      "key": "電話番号",
+      "value": "<a href='tel:054-908-9621'>054-908-9621</a>"
+    }]
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "name":"calender" ,
+    "schedules" : [{
+      "comment" : "休業日",
+      "rest" : true,
+      "date" : "2020-01-07"
+    }]
+  }
+]
